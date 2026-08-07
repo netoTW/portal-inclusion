@@ -35,6 +35,7 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 | [`specs/validacion-documental.md`](specs/validacion-documental.md) | Validación en dos niveles: admisibilidad automática + decisión humana |
 | [`specs/ficha-estudiante.md`](specs/ficha-estudiante.md) | Ficha única del estudiante (vista integradora, módulo 6 del cliente) |
 | [`specs/reportes-dashboards.md`](specs/reportes-dashboards.md) | Dashboards e indicadores (experiencia del perfil Rectoría, reportes de cumplimiento) |
+| [`specs/design-system.md`](specs/design-system.md) | Design system: tokens AA, componentes base, patrones de accesibilidad, login dev "actuar como" |
 | [`specs/TEMPLATE-RF.md`](specs/TEMPLATE-RF.md) | Template de spec por requerimiento funcional (Fase 0) |
 | [`docs/`](docs/) | Documentación viva: decisiones, arquitectura explicada, manuales |
 | [`docs/decisiones/`](docs/decisiones/) | ADRs (Architecture Decision Records), uno por decisión importante |

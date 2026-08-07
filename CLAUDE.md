@@ -57,6 +57,8 @@ Si una spec es ambigua, NO inventes: registra la duda en /DUDAS.md y sigue con l
 
 ## Definición de HECHO para cualquier tarea
 - Criterios de aceptación de la spec → tests que pasan
+- Módulo funcional ⇒ incluye sus VISTAS de usuario operables (con specs/design-system.md).
+  Un módulo sin UI operable NO está hecho; los CA de accesibilidad aplican sobre esas vistas
 - Gates verdes: pytest, vitest, playwright del módulo, lint, typecheck, axe
 - Si toca datos: migración Alembic incluida y reversible
 - Documentación mínima: docstring de módulo + entrada en /docs/CHANGELOG.md

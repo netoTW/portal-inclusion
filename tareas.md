@@ -3,16 +3,19 @@
 # ORDEN = DEPENDENCIAS. No reordenar sin razón.
 
 ## Semana 1 — cimientos (mucho de esto conviene supervisado, no nocturno)
-- [ ] scaffold      | specs/arquitectura.md         | monorepo+docker+CI con TODOS los gates
+- [ ] scaffold      | specs/arquitectura.md         | monorepo+docker+CI con TODOS los gates. HECHO incluye: /docs de FastAPI (OpenAPI interactiva) arriba con datos seed cargados, para ejercitar cada endpoint a mano
 - [ ] contracts     | specs/arquitectura.md         | tipos compartidos + adapters de integración
 - [ ] authz         | specs/authz.md                | policy engine ABAC + esquema clinical + gate
 - [ ] redteam       | specs/redteam.md              | agente adversarial docente→clinical, set de vectores
 - [ ] audit         | specs/audit.md                | bitácora inmutable, mutaciones + denegaciones
 - [ ] seed          | specs/seed.md                 | datos chilenos + generador 881 registros sucios calibrados
 - [ ] sla-engine    | specs/sla-engine.md            | motor de plazos: reloj hábil CL, pausas, avisos, escalamiento, períodos
-- [ ] workflow      | specs/workflow.md             | motor de metadatos + UI admin + 7 etapas/SLA seed + días hábiles CL (corazón del sistema)
+- [ ] workflow      | specs/workflow.md             | motor de metadatos + 7 etapas/SLA seed + días hábiles CL (corazón del sistema); su UI admin va en ui-admin
+- [ ] ui-shell      | specs/design-system.md        | design system (tokens+componentes) + navegación + login dev "actuar como" (7 perfiles) + layout por perfil
+- [ ] ui-admin      | specs/workflow.md + specs/design-system.md | PRIMERAS VISTAS REALES sobre el motor: panel admin GDI (procesos/formularios/SLA) + bandeja de casos
 
 ## Semana 2 — módulos funcionales (paralelizable en worktrees)
+# Regla: cada módulo incluye SUS VISTAS operables (CLAUDE.md) — backend solo no es HECHO
 - [ ] validacion-doc| specs/validacion-documental.md | catálogo requisitos + admisibilidad automática + decisión humana 1-click
 - [ ] solicitudes   | specs/modulo-solicitudes.md   | RF-001–010 + multi-caso + borradores + consentimiento
 - [ ] evidencias    | specs/modulo-evidencias.md    | RF-043–062: EL MÁS GRANDE (20 RF), prioritario. D-15/D-7/D-1, semáforo, bloqueo de cierre
