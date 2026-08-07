@@ -39,7 +39,7 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 | [`specs/design-system.md`](specs/design-system.md) | Design system: tokens AA, componentes base, patrones de accesibilidad, login dev "actuar como" |
 | [`specs/TEMPLATE-RF.md`](specs/TEMPLATE-RF.md) | Template de spec por requerimiento funcional (Fase 0) |
 | [`specs/rf/`](specs/rf/) | Una spec por requerimiento funcional (RF-001…RF-070, en tandas) |
-| `specs/modulo-*.md` | Índices por módulo: orden interno de construcción y mapa de cobertura del bloque ([workflow](specs/modulo-workflow.md), [solicitudes](specs/modulo-solicitudes.md), [evidencias](specs/modulo-evidencias.md), [documentos](specs/modulo-documentos.md), [adecuaciones](specs/modulo-adecuaciones.md), [cuidados](specs/modulo-cuidados.md)) |
+| `specs/modulo-*.md` | Índices por módulo: orden interno de construcción y mapa de cobertura del bloque ([workflow](specs/modulo-workflow.md), [solicitudes](specs/modulo-solicitudes.md), [evidencias](specs/modulo-evidencias.md), [documentos](specs/modulo-documentos.md), [adecuaciones](specs/modulo-adecuaciones.md), [cuidados](specs/modulo-cuidados.md), [comunicaciones](specs/modulo-comunicaciones.md)) |
 | [`docs/`](docs/) | Documentación viva: decisiones, arquitectura explicada, manuales |
 | [`docs/decisiones/`](docs/decisiones/) | ADRs (Architecture Decision Records), uno por decisión importante |
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Registro de cambios por módulo/fase |

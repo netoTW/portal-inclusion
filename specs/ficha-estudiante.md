@@ -27,7 +27,10 @@ adecuaciones, medidas, documentos, bitácora, comunicaciones, responsables y est
 | Rectoría/Vicerrectorías | NADA individual — no existe ruta de ficha para este perfil | cualquier dato identificable |
 
 ## Secciones (cada una alimentada por su módulo dueño)
-1. Identificación (datos personales + académicos vía BannerAdapter)
+1. Identificación (datos personales + académicos vía BannerAdapter; incluye los DOS
+   canales de correo: institucional —origen integración académica— y personal
+   —origen: capturado en la primera solicitud o entregado por AIEP—, usados por el
+   doble canal de avisos críticos de RF-065)
 2. Historial de solicitudes y estado actual de cada caso (solicitudes/workflow; multi-caso)
 3. Resoluciones y documentos (documentos; descarga según perfil)
 4. Adecuaciones y medidas vigentes, con vigencia semestral (adecuaciones/cuidados)

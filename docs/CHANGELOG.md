@@ -87,3 +87,13 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   SILENCIOSA (incumplimiento presunto — el silencio nunca mejora el semáforo, P3),
   ventana de corrección de confirmaciones del docente (5dh, auditada), renovación
   abreviada de cuidados exige acreditación administrativa vigente (pide solo eso).
+- **07-08-2026 · specs (Tanda 8 — 70/70 RF)** — Módulo Comunicaciones: RF-063 a
+  RF-070 + índice. Matriz de avisos como datos con clase no desactivable; correo
+  como canal hostil (test de corpus); docente fuera de hilos; dos hilos separados
+  con redacción GDI y original preservado; notas internas con régimen al nacer;
+  digest con promoción por vencimiento; metas sobre acuses reales. Ajustes de
+  revisión: ciclo de reintento de acuses críticos (5dh recordatorio → +5dh tarea al
+  DAE con gestión visible — el silencio genera gestión, no hoyo en la métrica) y
+  DOBLE CANAL de correo (institucional + personal) para clase crítica, modelado en
+  la ficha; duda de correo personal reformulada como pregunta de datos/política
+  (ALTA). Con esta tanda: los 70 RF especificados.
