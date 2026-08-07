@@ -1,0 +1,34 @@
+# SUPUESTOS — decisiones tomadas sin confirmación de AIEP
+
+Registro vivo. Cada supuesto tiene: qué asumimos, por qué, y la pregunta exacta para el
+levantamiento (la pregunta también vive en [DUDAS.md](DUDAS.md), priorizada).
+Este archivo alimenta la sección "supuestos" que el cap. 12 del RFP exige en la propuesta.
+Cuando llegue el **documento extendido (37 págs)** se re-audita la lista completa.
+
+Regla para agentes: si tu spec cita [S-xx], el supuesto MANDA hasta que AIEP lo confirme
+o corrija. No lo "mejores" por tu cuenta; si te estorba, regístralo en DUDAS.md.
+
+| ID | Supuesto | Fuente / justificación | Pregunta de levantamiento |
+|---|---|---|---|
+| S-01 | Universo de ~85.000 estudiantes potenciales | Cifra institucional pública de AIEP, EXTERNA al PDF | Verificar cifra y qué fracción es usuaria esperable del Portal |
+| S-02 | La Ficha única (módulo 6 del PDF) es una vista integradora sin RF propio; sus requisitos viven repartidos en los otros bloques | El cap. 7 asigna los 70 RF a 7 bloques y ninguno es "ficha" | ¿El doc extendido asigna RF específicos a la ficha única? |
+| S-03 | Estacionalidad: picos en marzo y agosto | Inferencia del calendario académico chileno; el PDF solo dice "inicio de cada semestre" | Confirmar meses/pico reales y ventanas de apertura de proceso |
+| S-04 | **(fuerte)** La fecha de aplicación efectiva la registra el docente (o jefatura) en una atestación de 1 click desde su vista; la sede supervisa | Meta cap. 11 (100% fecha de aplicación, hoy 0%) sin actor asignado en el PDF; UX de mínima fricción pedida por las sedes | **¿Quién registra la fecha de aplicación efectiva del ajuste?** (prioridad nº1 de DUDAS.md) |
+| S-05 | Renovación semestral SEMI-automática: el motor abre la instancia hija automáticamente y arrastra lo vigente; una persona confirma | El PDF dice "renovación simplificada" (módulo 4) y "renovación semestral automática" (figura 2) — conciliamos ambas | ¿Quién confirma la renovación (estudiante, DAE, GDI)? ¿Hay casos de renovación 100% automática? |
+| S-06 | Sistema académico = Ellucian Banner; en dev se mockea con su OpenAPI | El PDF dice "Banner o equivalente" | ¿Cuál es el sistema académico real y sus APIs disponibles? ¿Y cuál alimenta progresión/retención/titulación? |
+| S-07 | Firma electrónica vía FirmaAdapter conmutable; tipo (simple/avanzada) y proveedor pendientes | El PDF dice "mecanismo institucional vigente" sin especificar | ¿Qué mecanismo/proveedor de firma usa AIEP y de qué tipo? ¿Quiénes firman además de Secretaría General? |
+| S-08 | "Dirección de Sede" (destino de escalamiento, figura 3.2) es destinatario de notificaciones SIN login propio; no es un 8º perfil | Los 7 perfiles del cap. 8 no la incluyen | ¿Dirección de Sede necesita acceso a la plataforma o solo recibir correos? |
+| S-09 | Hay DOS cierres: cierre ADMINISTRATIVO del proceso (Secretaría General) y cierre DEL CASO (plataforma, etapa 7, solo tras evidencia validada) | Cap. 8 ("cerrar procesos") vs cap. 6 (etapa 7 "automático") | Confirmar la distinción y qué acciones habilita/bloquea cada cierre |
+| S-10 | Consentimiento informado de datos: se otorga al crear la primera solicitud, queda versionado y auditado | El bloque RF-001–010 lo menciona sin alcance ni momento | Alcance, momento y renovación del consentimiento; texto legal institucional |
+| S-11 | El proceso de Discapacidad Severa se diseña como pura configuración del motor, con etapas inferidas de "exploración e identificación de NEE" | El PDF no trae flujo ni RF de este proceso; exige configurarlo sin desarrollo | Flujo real, etapas, responsables y plazos del proceso NEE/Severa (doc extendido) |
+| S-12 | Migración: 541 + 153 + 187 = 881 registros SIN solape entre fuentes; el "o más" del PDF no altera el orden de magnitud | Cap. 10: "541 registros de solicitudes o más" | ¿Se solapan solicitudes ↔ seguimientos de evidencia ↔ severa? ¿Cuántos registros son a la fecha de migración real? |
+| S-13 | El período de evidencias es una entidad configurable (inicio, cierre, alcance) que abre GDI; valores reales desconocidos | Cap. 6: plazo de etapa 6 = "período definido", sin fechas | Fechas/duración reales del período por semestre; ¿uno nacional o por sede? |
+| S-14 | Marco normativo ampliado por nosotros: Ley 21.790 (cuidados) y Ley 21.719 (datos personales, vigente 01-12-2026, antes del go-live) además de las 20.422 y 21.091 que cita el PDF | Decisión deliberada del proveedor → [ADR-003](docs/decisiones/ADR-003-marco-normativo-ampliado.md) | Validar contra el "marco normativo" del doc extendido; confirmar tratamiento de datos de salud bajo 21.719 |
+| S-15 | Tipos de solicitud seed (4-5 verosímiles: adecuación menor, adecuación mayor, cuidados, discapacidad severa) con checklists documentales plausibles | Los requisitos documentales reales viven en el doc extendido; se construye el motor + catálogo editable (specs/validacion-documental.md) | Catálogo real de tipos de apoyo y sus requisitos documentales |
+| S-16 | El reloj SLA se PAUSA mientras el caso está "en espera de antecedentes del estudiante" (default configurable por etapa) | specs/sla-engine.md; el PDF no define semántica de pausa | ¿El plazo de evaluación corre o se pausa mientras se esperan antecedentes? |
+| S-17 | La renovación semestral cubre los tipos de apoyo "adecuaciones, acompañante y accesibilidad" como catálogo inicial | Figura 2 del PDF (pie) — única mención de tipos de apoyo | Catálogo completo de tipos de apoyo y cuáles renuevan |
+
+## Cómo mantener este archivo
+- Nuevo supuesto = nueva fila con ID correlativo + pregunta espejo en DUDAS.md.
+- Supuesto confirmado por AIEP → se marca ✅ con fecha y referencia; corregido → se
+  actualiza la spec afectada en el MISMO commit.
