@@ -28,7 +28,7 @@ click de decisión → genera resolución desde plantilla → FirmaAdapter →
 notifica al estudiante con documento firmado → asocia adecuaciones aprobadas
 → dispara etapa de Aplicación (tareas fechadas, avisos a docentes).
 
-## Seed para el experimento (marcar "pendiente validación AIEP" en SUPUESTOS.md)
+## Seed inicial (marcar "pendiente validación AIEP" en SUPUESTOS.md)
 4-5 tipos plausibles con requisitos verosímiles, ej:
 - Adecuación menor: certificado médico/psicológico (≤6 meses), informe de especialista
 - Adecuación mayor: + informe psicopedagógico, credencial discapacidad (RND) si aplica

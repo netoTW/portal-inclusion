@@ -1,5 +1,5 @@
 # Cola del runner — formato: módulo | spec | notas
-# [ ] pendiente · [x] hecha · [!] límite encontrado (revisar LIMITE-ENCONTRADO.md)
+# [ ] pendiente · [x] hecha · [!] BLOQUEO ACTIVO (LIMITE-ENCONTRADO.md + plan de destrabe en BITACORA.md)
 # ORDEN = DEPENDENCIAS. No reordenar sin razón.
 
 ## Semana 1 — cimientos (mucho de esto conviene supervisado, no nocturno)

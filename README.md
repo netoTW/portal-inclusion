@@ -36,10 +36,10 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Registro de cambios por módulo/fase |
 | [`SUPUESTOS.md`](SUPUESTOS.md) | Todo lo asumido sin confirmación del cliente, numerado [S-xx], con su pregunta de levantamiento |
 | [`DUDAS.md`](DUDAS.md) | Preguntas abiertas priorizadas + registro de ambigüedades que encuentran los agentes |
-| [`BITACORA.md`](BITACORA.md) | Bitácora del experimento: avance RF, horas, límites encontrados |
+| [`BITACORA.md`](BITACORA.md) | Control de obra: avance vs 70 RF, bloqueos activos con plan de destrabe, horas por módulo |
 | [`tareas.md`](tareas.md) | Cola de construcción ordenada por dependencias |
 | [`CLAUDE.md`](CLAUDE.md) | Convenciones maestras para todos los agentes |
-| [`README-ARRANQUE.md`](README-ARRANQUE.md) | Protocolo del experimento (fases, runner, métricas) |
+| [`README-ARRANQUE.md`](README-ARRANQUE.md) | Protocolo de construcción (fases, runner, control de obra) |
 | [`docs-fuente/`](docs-fuente/) | Documento fuente del cliente (PDF, resumen de requerimientos 24.07.2026) |
 | [`scripts/`](scripts/) | `runner.sh`: ejecución autónoma de la cola de tareas con gates |
 

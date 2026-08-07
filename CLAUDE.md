@@ -45,6 +45,8 @@ Si una spec es ambigua, NO inventes: registra la duda en /DUDAS.md y sigue con l
    expone la única función de cálculo de plazos; nadie la reimplementa.
 7. Si te trabas 3 veces con lo mismo: escribe LIMITE-ENCONTRADO.md en tu módulo
    (qué intentaste, por qué falló, qué necesitas) y pasa a la siguiente tarea.
+   OJO: eso es un BLOQUEO ACTIVO, no un resultado — queda registrado en BITACORA.md
+   y exige plan de destrabe (re-especificar, cambiar enfoque, o decisión de Pablo).
 
 ## Prohibiciones
 - No mocks dentro del código de producción (los mocks viven en /mocks).

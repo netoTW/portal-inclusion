@@ -1,8 +1,28 @@
-# BITÁCORA del experimento
+# BITÁCORA — control de obra
 
-Un par de líneas al día (README-ARRANQUE): RF completados /70 con gates verdes,
-horas humanas invertidas, límites encontrados, retrabajos por spec ambigua.
+Registro diario de la construcción (README-ARRANQUE): avance contra los 70 RF,
+bloqueos activos con su plan de destrabe, decisiones pendientes de Pablo y horas
+humanas reales por módulo (dato de gestión: alimenta la propuesta comercial).
 
-| Fecha | RF verdes /70 | Horas humanas | Notas (límites, retrabajos, hitos) |
+## Avance diario
+
+| Fecha | RF verdes /70 | Horas humanas | Notas (hitos, retrabajos) |
 |---|---|---|---|
-| 07-08-2026 | 0 | — | Fase 0: PDF auditado contra el kit, correcciones aplicadas, SUPUESTOS/DUDAS/ADRs creados. Pendiente: tandas de specs RF. |
+| 07-08-2026 | 0 | — | Fase 0: PDF auditado contra el kit, correcciones aplicadas, SUPUESTOS/DUDAS/ADRs creados, plan de tandas 0-9 aprobado. En curso: Tanda 0 (specs de infraestructura). |
+
+## Bloqueos activos
+
+Ningún [!] de la cola queda sin plan. Formato: módulo · qué falló · plan de destrabe
+(re-especificar / cambiar enfoque / decisión de Pablo) · estado.
+
+_(sin bloqueos — la construcción no ha partido)_
+
+## Decisiones pendientes de Pablo
+
+_(ninguna)_
+
+## Horas por módulo (acumulado)
+
+| Módulo | Horas humanas | Nota |
+|---|---|---|
+| fase-0 (specs) | — | en curso |
