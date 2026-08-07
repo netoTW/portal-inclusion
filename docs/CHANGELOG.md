@@ -19,3 +19,11 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   operativa de exfiltración, 7 familias de vectores, canario), `audit.md` (append-only
   con cadena de hashes, registro transaccional), `seed.md` (seed limpio + generador
   de 881 sucios calibrados). Supuestos nuevos S-18..S-20.
+- **07-08-2026 · specs (Tanda 1)** — Módulo Workflow especificado: RF-011 a RF-020 en
+  `specs/rf/` + índice `specs/modulo-workflow.md` (orden interno de construcción y
+  mapa de cobertura del bloque). Nombres de RF inferidos del bloque del cap. 7,
+  marcados para reconciliación con el doc extendido. Decisiones de revisión:
+  derivación = interconsulta con campo `tipo` extensible (duda ALTA), decisión única
+  por caso (respaldo cap. 1), distinción de tres niveles en la guarda de evidencia
+  (caso/definición/proceso seed). UI en paralelo: specs/design-system.md y tareas
+  ui-shell/ui-admin en la cola.

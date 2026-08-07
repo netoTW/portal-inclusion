@@ -15,6 +15,11 @@ con lo no-ambiguo).
 | **ALTA** | Sistema académico real ("Banner o equivalente") y APIs disponibles; sistema de progresión/retención/titulación | Resuelve de raíz la calidad de datos (32 variantes de sede) | [S-06](SUPUESTOS.md) |
 | **ALTA** | Mecanismo institucional de firma electrónica (proveedor, tipo simple/avanzada, firmantes) | Bloquea el diseño fino de documentos (RF-021–028) | [S-07](SUPUESTOS.md) |
 | **ALTA** | ¿El equipo DAE de sede requiere acceso a antecedentes clínicos para gestionar sus casos? | Hoy: DENY conservador en el clinical_gate; un "sí" es solo configuración + test (specs/authz.md) | [S-20](SUPUESTOS.md) |
+| **ALTA** | Definición real de "derivación" (bloque Workflow): ¿interconsulta, traspaso de caso, o ambos? | Hoy: interconsulta sin herencia de permisos; campo `tipo` extensible deja el traspaso como agregado sin tocar el motor ([RF-013](specs/rf/RF-013-derivaciones.md)) | — |
+| MEDIA | ¿Decisión única por caso o aprobaciones/rechazos parciales? | Asumida decisión única (respaldo: 391/541 binario + complementarias como mecanismo de apoyos adicionales); impacta Adecuaciones RF-029+ ([RF-012](specs/rf/RF-012-estados-transiciones.md)) | — |
+| MEDIA | ¿Plazo máximo de espera de antecedentes del estudiante y consecuencia al vencer? | Hoy: solo alerta a GDI, nunca anulación automática ([RF-014](specs/rf/RF-014-solicitud-antecedentes.md)) | — |
+| BAJA | Cadenas de escalamiento seed para etapas 3-5 (el PDF solo detalla la de evidencias) | Propuesto: +2dh supervisor directo, +5dh GDI ([RF-017](specs/rf/RF-017-escalamiento.md)) | — |
+| BAJA | Agrupación anti-spam de avisos (digest): frecuencia máxima tolerable por usuario | La sobrecarga de correos es la barrera nº1 de las sedes ([RF-016](specs/rf/RF-016-alertas-plazos.md)) | — |
 | MEDIA | ¿Quién confirma la renovación semestral? ¿Existe renovación 100% automática? | ~50% de la carga real son renovaciones | [S-05](SUPUESTOS.md) |
 | MEDIA | ¿El doc extendido asigna RF a la Ficha única (módulo 6)? | Define si la ficha es solo vista o tiene requisitos propios | [S-02](SUPUESTOS.md) |
 | MEDIA | Distinción de los dos cierres (administrativo por Secretaría vs caso por plataforma): confirmar semántica | Modelo de estados del motor | [S-09](SUPUESTOS.md) |

@@ -10,7 +10,7 @@
 - [ ] audit         | specs/audit.md                | bitácora inmutable, mutaciones + denegaciones
 - [ ] seed          | specs/seed.md                 | datos chilenos + generador 881 registros sucios calibrados
 - [ ] sla-engine    | specs/sla-engine.md            | motor de plazos: reloj hábil CL, pausas, avisos, escalamiento, períodos
-- [ ] workflow      | specs/workflow.md             | motor de metadatos + 7 etapas/SLA seed + días hábiles CL (corazón del sistema); su UI admin va en ui-admin
+- [ ] workflow      | specs/workflow.md + specs/modulo-workflow.md | motor de metadatos + 7 etapas/SLA seed + días hábiles CL (corazón del sistema); su UI admin va en ui-admin
 - [ ] ui-shell      | specs/design-system.md        | design system (tokens+componentes) + navegación + login dev "actuar como" (7 perfiles) + layout por perfil
 - [ ] ui-admin      | specs/workflow.md + specs/design-system.md | PRIMERAS VISTAS REALES sobre el motor: panel admin GDI (procesos/formularios/SLA) + bandeja de casos
 
