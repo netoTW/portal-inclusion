@@ -25,6 +25,9 @@ con lo no-ambiguo).
 | BAJA | ¿Quién subroga la firma de Secretaría General? Mecanismo construido, titular pendiente | ([RF-024](specs/rf/RF-024-firma-electronica.md)) | [S-07](SUPUESTOS.md) |
 | BAJA | Formato y dueño institucional del correlativo de resoluciones (¿libro actual de Secretaría?); formato institucional de resolución/carta | ([RF-028](specs/rf/RF-028-folio-registro-resoluciones.md), [RF-021](specs/rf/RF-021-plantillas-documentos.md)) | [S-18](SUPUESTOS.md) |
 | BAJA | Catálogo institucional de cartas/informes y cuáles exigen firma | Seed: aprobación y rechazo con firma; antecedentes sin ([RF-023](specs/rf/RF-023-cartas-comunicaciones-formales.md)) | — |
+| MEDIA | ¿Necesita AIEP una "medida provisoria" de urgencia pre-resolución (proceso con SLA corto)? | Hoy NO existe por diseño — sería contradictoria con "impedir adecuaciones no aprobadas" salvo que se diseñe como proceso formal ([RF-036](specs/rf/RF-036-impedir-no-aprobadas.md)) | — |
+| BAJA | Vigencia de apoyo otorgado a mitad de semestre: ¿hasta el fin del semestre en curso (regla operativa vigente) o un semestre completo? | ([RF-030](specs/rf/RF-030-vigencia-semestral.md)) | — |
+| BAJA | Mapa tipo-de-adecuación → responsable de implementación; ¿co-docentes/ayudantes ven el panel?; plazo de acuse docente antes de escalar (seed 3dh) | ([RF-031](specs/rf/RF-031-responsables-aplicacion.md), [RF-033](specs/rf/RF-033-panel-docente-adecuaciones.md), [RF-032](specs/rf/RF-032-aviso-docentes.md)) | — |
 | BAJA | ¿Recordatorios D-15/D-7/D-1 en días corridos (hoy) o hábiles? | ([RF-053](specs/rf/RF-053-recordatorios-periodo.md)) | — |
 | BAJA | Semáforo: ¿posición relativa anónima entre sedes (decisión vigente, respaldada por el scoping del cap. 8) o transparencia total? Umbral verde 90% propuesto | ([RF-056](specs/rf/RF-056-semaforo-por-sede.md)) | — |
 | BAJA | Retención de paquetes de exportación de auditoría (hoy: manifiesto + re-generación bajo demanda) y escalamiento por sobre Dirección de Sede | ([RF-060](specs/rf/RF-060-exportacion-auditoria.md), [RF-055](specs/rf/RF-055-escalamiento-periodo.md)) | — |
@@ -44,7 +47,8 @@ con lo no-ambiguo).
 | BAJA | Expiración de borradores (hoy: 6 meses, aviso a los 5) | ([RF-007](specs/rf/RF-007-borradores.md)) | — |
 | BAJA | Cadenas de escalamiento seed para etapas 3-5 (el PDF solo detalla la de evidencias) | Propuesto: +2dh supervisor directo, +5dh GDI ([RF-017](specs/rf/RF-017-escalamiento.md)) | — |
 | BAJA | Agrupación anti-spam de avisos (digest): frecuencia máxima tolerable por usuario | La sobrecarga de correos es la barrera nº1 de las sedes ([RF-016](specs/rf/RF-016-alertas-plazos.md)) | — |
-| MEDIA | ¿Quién confirma la renovación semestral? ¿Existe renovación 100% automática? | ~50% de la carga real son renovaciones | [S-05](SUPUESTOS.md) |
+| **ALTA** | ¿Quién confirma la renovación semestral (estudiante, DAE, o basta continuidad de matrícula en algunos tipos)? | ~50% de la carga real; diseño vigente: confirmación 1-click del estudiante con flujo abreviado ([RF-034](specs/rf/RF-034-renovacion-semestral.md)) | [S-05](SUPUESTOS.md) |
+| **ALTA** | ¿La renovación exige resolución nueva FIRMADA o un anexo simplificado? | Impacta directo la carga de Secretaría General (263 renovaciones/semestre y creciendo) — pregunta prioritaria del levantamiento ([RF-034](specs/rf/RF-034-renovacion-semestral.md), [RF-022](specs/rf/RF-022-generacion-resoluciones.md)) | — |
 | MEDIA | ¿El doc extendido asigna RF a la Ficha única (módulo 6)? | Define si la ficha es solo vista o tiene requisitos propios | [S-02](SUPUESTOS.md) |
 | MEDIA | Distinción de los dos cierres (administrativo por Secretaría vs caso por plataforma): confirmar semántica | Modelo de estados del motor | [S-09](SUPUESTOS.md) |
 | MEDIA | Alcance/momento/texto del consentimiento de datos | Zona sensible (datos de salud, Ley 21.719 si se valida ADR-003) | [S-10](SUPUESTOS.md) |

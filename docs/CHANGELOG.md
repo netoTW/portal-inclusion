@@ -68,3 +68,12 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   inferido); expediente por caso vs ficha por estudiante con vectores red-team
   dedicados; descargas siempre vía portal autenticado. Duda MEDIA: canal de acceso
   del ex-estudiante a su expediente (21.719 × vigencia cuentas M365).
+- **07-08-2026 · specs (Tanda 6)** — Módulo Adecuaciones: RF-029 a RF-036 + índice.
+  Cruce [S-22] cerrado por el lado vigencias: invariante de independencia
+  vigencia/evidencia (RF-030 P2) con tres tests espejo (RF-030 CA-2, RF-034 CA-3,
+  RF-054 CA-3b) — patrón de verificación cruzada adoptado para todo invariante
+  inter-módulo. Renovación con confirmación 1-click y flujo abreviado (dudas ALTA:
+  quién confirma; resolución vs anexo). Panel docente = allowlist más restrictiva y
+  blanco principal del red team. Aviso a docente como invariante de fuzzing. RF-036
+  sin vía de creación fuera de resolución; sin medida provisoria por diseño.
+  Migrados históricos marcados sin normalizar.
