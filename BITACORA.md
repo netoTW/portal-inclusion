@@ -8,14 +8,18 @@ humanas reales por módulo (dato de gestión: alimenta la propuesta comercial).
 
 | Fecha | RF verdes /70 | Horas humanas | Notas (hitos, retrabajos) |
 |---|---|---|---|
-| 07-08-2026 | 0 | — | Fase 0: PDF auditado contra el kit, correcciones aplicadas, SUPUESTOS/DUDAS/ADRs creados, plan de tandas 0-9 aprobado. En curso: Tanda 0 (specs de infraestructura). |
+| 07-08-2026 | 0 | — | **FASE 0 COMPLETA: 70/70 RF + 22 specs de soporte.** Auditoría del PDF, 10 tandas revisadas línea a línea por Pablo, 4 ADRs (incl. cambio mayor: evidencia por eventos), 23 supuestos, 64 preguntas de levantamiento, reporte de consistencia transversal en verde (compuerta final). Siguiente: cimientos supervisados (scaffold → contracts → authz → redteam, runner --once con Pablo mirando). |
 
 ## Recorridos disponibles
 
 Qué flujos se pueden clickear de punta a punta en el entorno local, actualizado por
 tanda/tarea. Un recorrido se lista cuando funciona con datos seed, no antes.
 
-_(ninguno — la construcción no ha partido; el primero será login dev → bandeja de casos)_
+_(ninguno — la construcción parte con los cimientos supervisados)_
+
+**Primer recorrido objetivo:** login dev "actuar como" (7 perfiles) → bandeja de
+casos con datos seed → abrir un caso y ver su historia. Se declara disponible cuando
+funcione de punta a punta, no antes.
 
 ## Bloqueos activos
 

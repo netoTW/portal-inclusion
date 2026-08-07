@@ -97,3 +97,15 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   DOBLE CANAL de correo (institucional + personal) para clase crítica, modelado en
   la ficha; duda de correo personal reformulada como pregunta de datos/política
   (ALTA). Con esta tanda: los 70 RF especificados.
+- **07-08-2026 · specs (Tanda 9 — FASE 0 COMPLETA)** — Integraciones y cierre:
+  mock-banner (OpenAPI = contrato del adapter; flag de fechas de evaluación),
+  mock-firma (panel fake; auto-firma solo e2e), mock-progresion (consumidor único:
+  reportes; cruce individual prohibido fuera del pipeline agregado), powerbi-export
+  (dataset agregado k-anon, versionado, extracción registrada), sso-m365 (Entra
+  autentica, la plataforma autoriza; sin rol = sin acceso), fuzzing-workflow
+  (propiedades consolidadas con generadores compartidos + mutación canario),
+  documentacion (7 manuales; el de administración es parte del sistema bajo prueba
+  RF-020), migracion (pipeline 5 etapas, ≥90% auto-resuelto objetivo, cola de
+  decisión humana, huecos visibles). Reporte de consistencia transversal: 17
+  verificaciones en verde — compuerta final aceptada. **Fase 0 completa: 70/70 RF
+  + 22 specs de soporte + 4 ADRs + 23 supuestos + 64 preguntas de levantamiento.**

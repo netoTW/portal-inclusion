@@ -37,6 +37,9 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 | [`specs/ficha-estudiante.md`](specs/ficha-estudiante.md) | Ficha única del estudiante (vista integradora, módulo 6 del cliente) |
 | [`specs/reportes-dashboards.md`](specs/reportes-dashboards.md) | Dashboards e indicadores (experiencia del perfil Rectoría, reportes de cumplimiento) |
 | [`specs/design-system.md`](specs/design-system.md) | Design system: tokens AA, componentes base, patrones de accesibilidad, login dev "actuar como" |
+| [`specs/rf020-proceso-severa.md`](specs/rf020-proceso-severa.md) | Guion de la prueba de parametrización: proceso NEE/Severa configurado solo por UI + manual |
+| `specs/mock-*.md`, [`sso-m365`](specs/sso-m365.md), [`powerbi-export`](specs/powerbi-export.md) | Integraciones: mocks de [Banner](specs/mock-banner.md), [firma](specs/mock-firma.md) y [progresión](specs/mock-progresion.md); SSO real M365; dataset Power BI |
+| [`specs/fuzzing-workflow.md`](specs/fuzzing-workflow.md), [`specs/migracion.md`](specs/migracion.md), [`specs/documentacion.md`](specs/documentacion.md) | Cierre: suite de propiedades, pipeline de migración (881 registros), 7 manuales por perfil |
 | [`specs/TEMPLATE-RF.md`](specs/TEMPLATE-RF.md) | Template de spec por requerimiento funcional (Fase 0) |
 | [`specs/rf/`](specs/rf/) | Una spec por requerimiento funcional (RF-001…RF-070, en tandas) |
 | `specs/modulo-*.md` | Índices por módulo: orden interno de construcción y mapa de cobertura del bloque ([workflow](specs/modulo-workflow.md), [solicitudes](specs/modulo-solicitudes.md), [evidencias](specs/modulo-evidencias.md), [documentos](specs/modulo-documentos.md), [adecuaciones](specs/modulo-adecuaciones.md), [cuidados](specs/modulo-cuidados.md), [comunicaciones](specs/modulo-comunicaciones.md)) |
