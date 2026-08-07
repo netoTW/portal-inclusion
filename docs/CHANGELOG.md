@@ -36,3 +36,12 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   NO diseñado por decisión; reuso documental configurable entre casos; herramienta de
   fusión de catálogos compartida con migración. Duda nueva MEDIA: consentimiento de
   menores de 18.
+- **07-08-2026 · specs (Tanda 3)** — Evidencias I especificado: RF-043 a RF-052
+  (períodos, apertura automática, checklist derivado de lo aprobado, tablero de sede,
+  carga, validación automática, estados y subsanación, archivo en expediente, cierre,
+  regla de oro). Supuesto estructural S-21: "validada" = validación estructural
+  automática + rondas de muestreo GDI documentadas con reversión (duda ALTA).
+  Decisiones: no existe "validar a mano"; corte a fecha programada; anulados/cerrados
+  disjuntos en métricas; regularización tardía con marca fuera de plazo. Duda
+  transversal nueva (Tandas 4/6): ciclo de vida del caso no acreditado post-cierre
+  vs. vigencia y renovación.

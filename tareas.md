@@ -20,7 +20,7 @@
 - [ ] solicitudes   | specs/modulo-solicitudes.md   | RF-001–010 + multi-caso + borradores + consentimiento
 - [ ] evidencias    | specs/modulo-evidencias.md    | RF-043–062: EL MÁS GRANDE (20 RF), prioritario. D-15/D-7/D-1, semáforo, bloqueo de cierre
 - [ ] documentos    | specs/modulo-documentos.md    | RF-021–028: resoluciones/cartas + versionado + FirmaAdapter
-- [ ] adecuaciones  | specs/modulo-adecuaciones.md  | RF-029–036: vigencia semestral, renovación, impedir no-aprobadas
+- [ ] adecuaciones  | specs/modulo-adecuaciones.md  | RF-029–036: vigencia semestral, renovación, impedir no-aprobadas + resolver cruce con caso NO acreditado post-cierre (DUDAS.md transversal T4/T6)
 - [ ] cuidados      | specs/modulo-cuidados.md      | RF-037–042: REUSAR motor 21.790 existente + diseñar datos clínicos de TERCEROS (persona cuidada): esquema clinical + consentimiento (authz.md, DUDAS.md)
 - [ ] comunicaciones| specs/modulo-comunicaciones.md| RF-063–070: plantillas administrables + registro de envíos y acuses
 - [ ] ficha         | specs/ficha-estudiante.md     | vista integradora (módulo 6 PDF, sin RF propio): compone solicitudes+documentos+adecuaciones+cuidados+evidencias+comunicaciones vía contracts — VA DESPUÉS de ellos
