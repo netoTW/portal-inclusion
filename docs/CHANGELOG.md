@@ -61,3 +61,10 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   formalizada + "cierre excepcional documentado", histórico con línea base 2024-25,
   exportación con manifiesto de integridad, configuración del ciclo, contrato de
   indicadores (CA: el seed reproduce la línea base del PDF).
+- **07-08-2026 · specs (Tanda 5)** — Módulo Documentos: RF-021 a RF-028 + índice.
+  Decisiones: plantillas sin campos clínicos por construcción; firmados inmutables
+  con efectos solo post-firma; modificatoria NO diseñada; firma por lote +
+  subrogancia construida; folio oficial al firmar sin huecos (RF-028, el más
+  inferido); expediente por caso vs ficha por estudiante con vectores red-team
+  dedicados; descargas siempre vía portal autenticado. Duda MEDIA: canal de acceso
+  del ex-estudiante a su expediente (21.719 × vigencia cuentas M365).
