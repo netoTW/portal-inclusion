@@ -34,7 +34,10 @@ gestiona — no se descubre al final, se ve venir.
 1. Durante el período abierto: el semáforo se computa en vivo desde los estados
    (RF-049) — misma fuente que los tableros, nunca un cálculo paralelo. Con ADR-004
    los incumplimientos de EVENTO entran EN TIEMPO REAL: una sede con evaluaciones sin
-   confirmar se degrada hoy, no al cierre.
+   confirmar se degrada hoy, no al cierre. Las SECCIONES SILENCIOSAS
+   (evidencia-eventos.md: aprobados vigentes sin ninguna evaluación registrada a la
+   fecha configurable) penalizan como INCUMPLIMIENTO PRESUNTO — el silencio nunca
+   mejora el semáforo.
 2. Los ARRASTRADOS (RF-054) cuentan contra la sede en el período vigente; los que
    superan el umbral de instancia formal (RF-054) se destacan en el panel GDI con su
    alerta y estado de gestión.

@@ -42,6 +42,25 @@ confirma la implementación con una atestación estructurada {qué se implement�
 cuándo, observación} — sin evaluación ni cruce; el ítem queda cumplido al confirmar,
 con captura de fecha y autor. Pendientes y recordatorios usan el ciclo del período.
 
+## Alerta de sección silenciosa (la fiscalización de lo no registrado)
+El modo evento no puede fiscalizar lo que no sabe que existió: sin esta alerta, el
+docente que nunca registra fechas aparecería como el más limpio. Regla:
+- Una sección con estudiantes con apoyos vigentes que a una FECHA CONFIGURABLE del
+  semestre (seed: mitad del período) no registra NINGUNA evaluación → **sección
+  silenciosa**: alerta en el tablero de la sede (RF-046) y en el panel GDI,
+  penaliza el semáforo como **incumplimiento presunto** (RF-056), y genera tarea al
+  docente con el escalamiento estándar (RF-016/017).
+- La alerta se apaga SOLO registrando evaluaciones (o marcando GDI la sección como
+  sin-evaluaciones-legítimas, con motivo auditado — ej. ramo sin evaluaciones ese
+  semestre).
+
+## Corrección de confirmaciones
+- El docente puede corregir su PROPIA confirmación errónea dentro de una ventana
+  configurable (seed: 5 días hábiles): registro auditado del estado anterior y
+  posterior, recálculo del cumplimiento derivado, y notificación a la sede si el
+  cambio altera un semáforo.
+- Pasada la ventana, solo GDI corrige, con motivo.
+
 ## Reglas duras
 - La confirmación es del RESPONSABLE (docente en evento; según tipo en atestación) —
   la sede NO confirma por el docente; puede recordarle (visibilidad de pendientes en
@@ -62,12 +81,22 @@ con captura de fecha y autor. Pendientes y recordatorios usan el ciclo del perí
       permanente del red team); un docente no confirma evaluaciones de secciones ajenas.
 - [ ] CA-5 (accesibilidad): confirmación completa operable por teclado desde el
       enlace directo; axe 0.
+- [ ] CA-6 (sección silenciosa): sección con aprobados vigentes y cero evaluaciones
+      a la fecha configurable → alerta en tablero de sede y panel GDI, semáforo
+      penalizado como incumplimiento presunto, tarea al docente con escalamiento;
+      registrar una evaluación (o el descargo GDI con motivo) la apaga.
+- [ ] CA-7 (corrección): el docente corrige su confirmación dentro de la ventana →
+      estados anterior/posterior auditados, cumplimiento recalculado, sede
+      notificada si cambió un semáforo; fuera de ventana el docente recibe 403 y
+      solo GDI corrige con motivo.
 
 ## Propiedades (fuzzing)
 - P1: todo ítem modo-evento cumplido tiene exactamente una confirmación válida del
   responsable correcto con fecha capturada.
 - P2: pendientes de evento nunca se pierden: toda evaluación pasada termina en
   confirmada, reprogramada o incumplimiento visible.
+- P3 (sección silenciosa): ninguna sección con aprobados vigentes termina el período
+  sin evaluaciones registradas NI alerta emitida (el silencio nunca es invisible).
 
 ## Dudas (ALTA, en DUDAS.md)
 - ¿AIEP está dispuesto a exigir a docentes el registro de fechas y confirmación de

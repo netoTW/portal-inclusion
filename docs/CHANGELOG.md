@@ -77,3 +77,13 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   blanco principal del red team. Aviso a docente como invariante de fuzzing. RF-036
   sin vía de creación fuera de resolución; sin medida provisoria por diseño.
   Migrados históricos marcados sin normalizar.
+- **07-08-2026 · specs (Tanda 7)** — Módulo Cuidados: RF-037 a RF-042 + índice +
+  guion `rf020-proceso-severa.md` (prueba de parametrización con verificación dura).
+  Diseño S-23 de datos de salud de terceros: declaración responsable del cuidador +
+  minimización activa (acreditación administrativa antes que informes médicos) +
+  acceso solo GDI/Secretaría con propósito + derechos del tercero vía GDI.
+  Minimización de contexto: el docente ve "medida de apoyo institucional", nunca
+  "cuidados". Seguimiento no punitivo. Ajustes de revisión: alerta de SECCIÓN
+  SILENCIOSA (incumplimiento presunto — el silencio nunca mejora el semáforo, P3),
+  ventana de corrección de confirmaciones del docente (5dh, auditada), renovación
+  abreviada de cuidados exige acreditación administrativa vigente (pide solo eso).

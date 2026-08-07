@@ -16,7 +16,9 @@ nacional no escribe ni un correo.
 ATESTACIÓN pendientes. Los pendientes de EVENTO tienen su propio ciclo en tiempo real
 (reloj de gracia post-evaluación, reprogramaciones — specs/evidencia-eventos.md) y NO
 esperan al D-15: el recordatorio de un evento sin confirmar le llega al DOCENTE al
-vencer su gracia, y a la sede como visibilidad (RF-046).
+vencer su gracia, y a la sede como visibilidad (RF-046). La ALERTA DE SECCIÓN
+SILENCIOSA (evidencia-eventos.md) también corre por su propia fecha configurable
+(seed: mitad del período), con tarea al docente y escalamiento estándar.
 
 ## Perfiles y permisos
 | Perfil | Puede |
