@@ -28,6 +28,10 @@ Organizado por regla atacada. Familias mínimas por regla:
   celdas n<k; diferencias entre dos consultas agregadas que aíslen a un individuo.
 - **Escalada por configuración:** intentar relajar la matriz de permisos vía panel admin
   con rol no-GDI; intentar editar una de las 4 invariantes con rol GDI (debe fallar).
+- **Campos creados POST-SEED:** crear vía panel un formulario nuevo con un campo
+  `sensible: true` (RF-002), llenarlo con un estudiante, y verificar que el dato cayó
+  al esquema clinical y que Docente/Jefatura no lo alcanzan por ninguna vía. Las
+  garantías "por diseño" deben cubrir lo que se configure MAÑANA, no solo el seed.
 - **Sesión/actor:** tokens de un rol usados contra endpoints de otro; usuario DAE con
   sede_id manipulado en el JWT/perfil.
 

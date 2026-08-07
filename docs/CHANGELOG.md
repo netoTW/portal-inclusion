@@ -27,3 +27,12 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   por caso (respaldo cap. 1), distinción de tres niveles en la guarda de evidencia
   (caso/definición/proceso seed). UI en paralelo: specs/design-system.md y tareas
   ui-shell/ui-admin en la cola.
+- **07-08-2026 · specs (Tanda 2)** — Módulo Solicitudes especificado: RF-001 a RF-010
+  + índice `specs/modulo-solicitudes.md`. Decisiones de revisión: RF-010 multi-caso
+  con código propio (specs ancladas a capacidad, no a código); clasificación
+  `sensible` obligatoria en el constructor de formularios con vector red-team
+  post-seed; vigencia documental a fecha de envío (regla justa al estudiante);
+  re-aceptación de consentimiento sin cortar casos en curso; retiro de consentimiento
+  NO diseñado por decisión; reuso documental configurable entre casos; herramienta de
+  fusión de catálogos compartida con migración. Duda nueva MEDIA: consentimiento de
+  menores de 18.
