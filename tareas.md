@@ -18,7 +18,7 @@
 - [ ] evidencias    | specs/modulo-evidencias.md    | RF-043–062: EL MÁS GRANDE (20 RF), prioritario. D-15/D-7/D-1, semáforo, bloqueo de cierre
 - [ ] documentos    | specs/modulo-documentos.md    | RF-021–028: resoluciones/cartas + versionado + FirmaAdapter
 - [ ] adecuaciones  | specs/modulo-adecuaciones.md  | RF-029–036: vigencia semestral, renovación, impedir no-aprobadas
-- [ ] cuidados      | specs/modulo-cuidados.md      | RF-037–042: REUSAR motor 21.790 existente
+- [ ] cuidados      | specs/modulo-cuidados.md      | RF-037–042: REUSAR motor 21.790 existente + diseñar datos clínicos de TERCEROS (persona cuidada): esquema clinical + consentimiento (authz.md, DUDAS.md)
 - [ ] comunicaciones| specs/modulo-comunicaciones.md| RF-063–070: plantillas administrables + registro de envíos y acuses
 - [ ] ficha         | specs/ficha-estudiante.md     | vista integradora (módulo 6 PDF, sin RF propio): compone solicitudes+documentos+adecuaciones+cuidados+evidencias+comunicaciones vía contracts — VA DESPUÉS de ellos
 - [ ] reportes      | specs/reportes-dashboards.md  | dashboard ejecutivo Rectoría (agregados, k-anon ADR-002) + reportes cumplimiento + indicadores en línea (metas cap. 11) + dataset Power BI

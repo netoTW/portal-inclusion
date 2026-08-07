@@ -26,6 +26,11 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 | [`specs/`](specs/) | **Contrato de construcción** (fuente de verdad para los agentes que implementan) |
 | [`specs/contexto-aiep.md`](specs/contexto-aiep.md) | Datos reales de la operación: volúmenes, perfiles, etapas, SLA, métricas de éxito, diagramas del PDF como texto |
 | [`specs/arquitectura.md`](specs/arquitectura.md) | Monorepo, separación de datos clínicos, policy engine, motor de workflow, gates de CI, adapters |
+| [`specs/authz.md`](specs/authz.md) | Policy engine ABAC: las 4 reglas de acceso "por diseño", clinical_gate, matriz en datos |
+| [`specs/workflow.md`](specs/workflow.md) | Motor de workflow por metadatos: procesos como datos, versionado, renovaciones, prueba RF-020 |
+| [`specs/redteam.md`](specs/redteam.md) | Gate adversarial: set de vectores congelado + agente generador; 0 exfiltraciones |
+| [`specs/audit.md`](specs/audit.md) | Bitácora inmutable append-only con cadena de hashes; quién/qué/cuándo/desde dónde |
+| [`specs/seed.md`](specs/seed.md) | Datos sintéticos chilenos + generador de 881 registros sucios calibrados para la migración |
 | [`specs/sla-engine.md`](specs/sla-engine.md) | Motor de plazos: reloj hábil chileno, pausas, avisos, escalamiento, períodos |
 | [`specs/validacion-documental.md`](specs/validacion-documental.md) | Validación en dos niveles: admisibilidad automática + decisión humana |
 | [`specs/ficha-estudiante.md`](specs/ficha-estudiante.md) | Ficha única del estudiante (vista integradora, módulo 6 del cliente) |
