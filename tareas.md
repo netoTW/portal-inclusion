@@ -20,10 +20,14 @@
 - [ ] adecuaciones  | specs/modulo-adecuaciones.md  | RF-029–036: vigencia semestral, renovación, impedir no-aprobadas
 - [ ] cuidados      | specs/modulo-cuidados.md      | RF-037–042: REUSAR motor 21.790 existente
 - [ ] comunicaciones| specs/modulo-comunicaciones.md| RF-063–070: plantillas administrables + registro de envíos y acuses
+- [ ] ficha         | specs/ficha-estudiante.md     | vista integradora (módulo 6 PDF, sin RF propio): compone solicitudes+documentos+adecuaciones+cuidados+evidencias+comunicaciones vía contracts — VA DESPUÉS de ellos
+- [ ] reportes      | specs/reportes-dashboards.md  | dashboard ejecutivo Rectoría (agregados, k-anon ADR-002) + reportes cumplimiento + indicadores en línea (metas cap. 11) + dataset Power BI
 
 ## Semana 2-3 — integraciones simuladas + cierre
 - [ ] mock-banner   | specs/mock-banner.md          | OpenAPI Ellucian + Prism + datos dummy
 - [ ] mock-firma    | specs/mock-firma.md           | enviar/estado + panel fake
+- [ ] mock-progresion| specs/mock-progresion.md     | API dummy progresión/retención/titulación + ProgresionAdapter
+- [ ] powerbi-export| specs/powerbi-export.md       | PowerBIAdapter: dataset de indicadores consumible (dev: endpoint JSON/CSV; prod: Power BI)
 - [ ] sso-m365      | specs/sso-m365.md             | tenant real M365 Developer (crear tenant es manual: 20 min Pablo)
 - [ ] rf020-prueba  | specs/rf020-proceso-severa.md | agente-funcionario configura el proceso de Discapacidad Severa (153 casos) SOLO con UI+manual — la prueba de parametrización que exige el RFP
 - [ ] fuzzing       | specs/fuzzing-workflow.md     | propiedades + fast-check contra el motor

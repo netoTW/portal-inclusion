@@ -44,13 +44,14 @@ while true; do
 
   if [ "$exito" = "1" ]; then
     git add -A && git commit -m "feat($modulo): $spec [runner, gates verdes]" >/dev/null
-    sed -i "${num}s/- \[ \]/- [x]/" "$COLA"
+    # sed -i portable (BSD/macOS exige sufijo; GNU lo acepta): usar backup y borrarlo
+    sed -i.bak "${num}s/- \[ \]/- [x]/" "$COLA" && rm -f "$COLA.bak"
     echo "  ✔ HECHO y commiteado" | tee -a "$LOG"
   else
     mkdir -p "packages/$modulo"
     claude -p "Los gates de '$modulo' fallaron $MAX_REINTENTOS veces. Lee $LOG y escribe packages/$modulo/LIMITE-ENCONTRADO.md: qué se intentó, hipótesis de por qué falla, qué se necesita para destrabarlo. Sé específico y honesto." \
       --dangerously-skip-permissions >> "$LOG" 2>&1
-    sed -i "${num}s/- \[ \]/- [!]/" "$COLA"
+    sed -i.bak "${num}s/- \[ \]/- [!]/" "$COLA" && rm -f "$COLA.bak"
     git add -A && git commit -m "wip($modulo): límite encontrado, documentado" >/dev/null
     echo "  ⚠ LÍMITE-ENCONTRADO documentado, sigo con la próxima" | tee -a "$LOG"
   fi

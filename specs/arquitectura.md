@@ -16,15 +16,23 @@ no una feature. Se garantiza por construcción y se demuestra por ataque automat
   /evidencias     RF-...    (ciclo de evidencia, acreditación por sede, escalamiento)
   /documentos     RF-021..028 (generación resoluciones/cartas, versionado vía SharePoint en prod / MinIO en dev)
   /adecuaciones   RF-...
-  /cuidados       RF-037..042 (reusar motor Ley 21.790 existente de Pablo)
-  /comunicaciones RF-...    (notificaciones, bandejas, plantillas)
+  /cuidados       RF-037..042 (reusar motor Ley 21.790 existente de Pablo — ver ADR-003)
+  /comunicaciones RF-063..070 (notificaciones, bandejas, plantillas)
+  /ficha          Vista integradora del estudiante (módulo 6 del PDF, sin rango RF propio).
+                  Solo COMPONE datos de los demás módulos vía contracts; no posee tablas
+                  de negocio propias. Cada perfil ve su recorte autorizado (authz decide).
+  /reportes       Dashboards e indicadores en línea: dashboard ejecutivo Rectoría
+                  (solo agregados, k-anonimato → ADR-002), reportes de cumplimiento,
+                  exportación auditoría, dataset para Power BI (vía PowerBIAdapter).
   /audit          Bitácora inmutable de toda mutación y todo acceso denegado
   /contracts      Tipos/DTOs compartidos entre módulos (única forma de hablarse)
   /seed           Datos chilenos realistas + generador de datos sucios (881 registros)
 /mocks
   /banner         Mock OpenAPI (Prism) de APIs Ellucian: estudiantes, matrícula, avance
   /firma          Mock 2 endpoints (enviar, estado) + panel fake de firma
+  /progresion     Mock API de progresión/retención/titulación (integración cap. 9 del PDF)
   # SSO/SharePoint: NO se mockean → tenant real M365 Developer Program
+  # Power BI: no se mockea → PowerBIAdapter expone dataset consumible (dev: endpoint JSON/CSV)
 /e2e              Playwright: flujos completos por perfil
 /redteam          Agente adversarial: intenta exfiltrar datos clínicos como docente
 /specs            Fuente de verdad (este directorio)
@@ -40,7 +48,8 @@ no una feature. Se garantiza por construcción y se demuestra por ataque automat
 ## Policy engine (authz)
 - ABAC: decide(actor{rol, sede, relación_con_estudiante}, acción, recurso, contexto).
 - Implementa las 4 reglas "por diseño" del RFP: docente-clínico, jefatura-clínico,
-  scoping territorial de sede, y agregación-only para Rectoría (k-anonimato en dashboards).
+  scoping territorial de sede, y agregación-only para Rectoría (el k-anonimato en
+  dashboards es decisión de diseño nuestra, no exigencia del RFP → docs/decisiones/ADR-002).
 - Toda denegación → evento en audit con vector de intento.
 - Matriz de permisos VIVE EN DATOS (editable), con tests que la congelan por rol
   usando la tabla exacta de specs/contexto-aiep.md.
@@ -76,4 +85,6 @@ Cada integración es un adapter con interfaz en /contracts:
 - FirmaAdapter → mock | proveedor real
 - IdentityAdapter → tenant M365 dev | tenant AIEP
 - StorageAdapter → MinIO | SharePoint
+- ProgresionAdapter → mock | sistema real de progresión/retención/titulación (cuál es: DUDAS.md)
+- PowerBIAdapter → endpoint dataset JSON/CSV (dev) | dataset/push a Power BI institucional (prod)
 El código de negocio NO sabe contra cuál corre.
