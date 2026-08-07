@@ -8,11 +8,16 @@ de carga + validación. La subsanación es el bucle que convierte el rechazo en
 cumplimiento (sin ella, un rechazo automático sería un callejón sin salida).
 
 ## Descripción
-Cada ítem del checklist vive una máquina de estados clara y visible:
-`pendiente → cargada → validada`, con el desvío `observada → (subsanación) → cargada…`
-y los terminales administrativos `cancelada` (apoyo revocado) y `no evaluable con
-visto GDI` [S-21]. El estado del CASO en el período se deriva de sus ítems: acreditado
-cuando todos los obligatorios están validados.
+Cada ítem del checklist vive una máquina de estados POR MODO (ADR-004):
+- **DOCUMENTAL:** `pendiente → cargada → validada`, con desvío `observada →
+  (subsanación) → cargada…` y terminales `cancelada` / `no evaluable con visto GDI` [S-21].
+- **EVENTO:** `pendiente → cumplido | incumplido` derivado EN TIEMPO REAL del
+  circuito de evidencia-eventos.md (confirmaciones, reprogramaciones con pendiente
+  vivo, evaluación pasada sin confirmar → incumplido visible).
+- **ATESTACIÓN:** `pendiente → cumplido` al confirmar el responsable (con captura de
+  fecha y autor).
+El estado del CASO en el período se deriva de sus ítems: acreditado cuando todos los
+obligatorios están satisfechos según su modo.
 
 ## Perfiles y permisos
 | Perfil | Puede |
@@ -62,8 +67,9 @@ cuando todos los obligatorios están validados.
 ## Propiedades (fuzzing)
 - P1: las transiciones observadas pertenecen al grafo definido (no hay estados ni
   saltos fantasmas), ante cualquier secuencia de cargas/validaciones/reversiones.
-- P2: acreditado(caso) ⇔ ∀ ítem obligatorio ∈ {validada, cancelada con obligatorios
-  restantes validados} — consistencia derivada, nunca almacenada a mano.
+- P2: acreditado(caso) ⇔ ∀ ítem obligatorio satisfecho según su modo (documental:
+  validada · evento: cumplido · atestación: cumplido) o cancelado — consistencia
+  derivada, nunca almacenada a mano.
 
 ## Fuera de alcance
 - Los motivos de validación (RF-048), la carga (RF-047).

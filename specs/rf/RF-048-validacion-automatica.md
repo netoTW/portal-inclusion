@@ -1,8 +1,12 @@
-# RF-048 — Validación automática de evidencias
+# RF-048 — Validación automática de evidencias (modo DOCUMENTAL)
 
 **Módulo:** evidencias
 **Prioridad:** crítica
 **Depende de:** RF-045, RF-047; define el significado de "validada" [S-21]
+**Alcance por ADR-004:** esta validación y el MUESTREO con rondas aplican SOLO al
+modo DOCUMENTAL. El modo EVENTO se AUTOVALIDA por cruce (confirmación del docente ×
+condiciones de la resolución — sin validación posterior ni muestreo); el modo
+ATESTACIÓN queda cumplido con la confirmación estructurada del responsable.
 **Inferencia:** de la etapa 6 del PDF (la PLATAFORMA "valida formato, fecha y
 coherencia"), figura 3.2 (paso 4: "el sistema valida formato y coherencia") y el
 diagnóstico del cap. 3: hoy "recibida" significa que la sede declaró enviar algo,

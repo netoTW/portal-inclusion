@@ -10,9 +10,15 @@ coherente con el mecanismo aprobado".
 
 ## Descripción
 Cada caso del período tiene su checklist generado automáticamente desde las
-adecuaciones/medidas APROBADAS en su resolución: por cada apoyo, qué evidencia se
-espera (tipo, ventana de fechas, formato). La sede nunca adivina qué mandar; hoy ese
-vacío es exactamente por qué "recibida" no prueba implementación.
+adecuaciones/medidas APROBADAS en su resolución: por cada apoyo, un ítem según el
+**MODO DE EVIDENCIA** que su tipo declara ([ADR-004](../../docs/decisiones/ADR-004-evidencia-por-eventos.md)):
+- **EVENTO** (apoyos evaluativos, el grueso): el ítem se satisface con confirmaciones
+  de rendición capturadas por el circuito de specs/evidencia-eventos.md.
+- **ATESTACIÓN** (material adaptado, accesibilidad, acompañamientos): confirmación
+  estructurada del responsable.
+- **DOCUMENTAL** (residual): carga y validación de archivo (RF-047/048).
+La sede nunca adivina qué acreditar; hoy ese vacío es exactamente por qué "recibida"
+no prueba implementación.
 
 ## Perfiles y permisos
 | Perfil | Puede |
@@ -26,10 +32,11 @@ vacío es exactamente por qué "recibida" no prueba implementación.
 | Rectoría/Vicerrectorías | nada |
 
 ## Datos que toca
-- Entidades: checklist {caso, período, ítems[]}; ítem {apoyo aprobado de origen, tipo
-  de evidencia esperado, ventana de fechas, formatos, estado (RF-049), ayuda}.
-  El CATÁLOGO tipo-de-apoyo → tipo-de-evidencia es configuración de GDI (editable sin
-  código, mismo patrón que validacion-documental.md).
+- Entidades: checklist {caso, período, ítems[]}; ítem {apoyo aprobado de origen,
+  MODO (evento|atestación|documental), qué lo satisface según modo (confirmaciones
+  esperadas / atestación / tipo de archivo + ventana + formatos), estado (RF-049), ayuda}.
+  El CATÁLOGO tipo-de-apoyo → modo + parámetros es configuración de GDI (RF-061,
+  editable sin código, mismo patrón que validacion-documental.md).
 - ¿Datos clínicos? NO: el checklist habla de apoyos aprobados ("tiempo adicional en
   evaluaciones"), nunca de diagnósticos.
 
@@ -41,8 +48,12 @@ vacío es exactamente por qué "recibida" no prueba implementación.
 3. Los ítems se satisfacen con cargas (RF-047) que pasan la validación (RF-048).
 
 ## Flujos alternos / casos borde
-- Apoyo aprobado sin mapeo de evidencia en el catálogo: ítem genérico "constancia de
+- Apoyo aprobado sin mapeo en el catálogo: ítem genérico DOCUMENTAL "constancia de
   implementación" + alerta a GDI para completar el catálogo (nunca silencio).
+- Checklist MIXTO (caso con apoyos de distintos modos): normal — cada ítem vive su
+  ciclo; el caso acredita cuando todos los obligatorios se satisfacen según SU modo.
+- Ítems modo evento con MÚLTIPLES evaluaciones en el semestre: el ítem agrega las
+  confirmaciones (cumplido cuando el conjunto exigido por la resolución se satisface).
 - Caso multi-apoyo: un ítem por apoyo; el caso acredita cuando TODOS los obligatorios
   están validados.
 - Adecuación revocada/anulada a mitad de período: su ítem se cancela con registro.

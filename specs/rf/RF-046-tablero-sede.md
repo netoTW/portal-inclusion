@@ -30,8 +30,11 @@ correos: lo VE.
   y estado de evidencias [S-20].
 
 ## Flujo principal
-1. DAE entra al tablero: resumen arriba (total, al día, por vencer, en rojo, validadas
-   — iconos+texto) y la lista de casos ordenada por urgencia.
+1. DAE entra al tablero: resumen arriba (total, al día, por vencer, en rojo,
+   satisfechas — iconos+texto) y la lista de casos ordenada por urgencia. Los
+   pendientes de EVENTO (evaluaciones sin confirmar de docentes de su sede,
+   reprogramaciones vivas — ADR-004) aparecen EN TIEMPO REAL como categoría propia:
+   la sede no confirma por el docente, pero VE quién debe y puede recordarle.
 2. Filtros: estado del ítem, tipo de apoyo, escuela, búsqueda por folio/nombre.
 3. Click en un caso → checklist (RF-045) con carga en línea (RF-047).
 4. El tablero refleja los estados EN VIVO (lo que valida RF-048 sale de "pendiente").

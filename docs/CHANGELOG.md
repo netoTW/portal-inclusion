@@ -45,3 +45,19 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   disjuntos en métricas; regularización tardía con marca fuera de plazo. Duda
   transversal nueva (Tandas 4/6): ciclo de vida del caso no acreditado post-cierre
   vs. vigencia y renovación.
+- **07-08-2026 · specs (ADR-004 + Tanda 3-bis)** — Cambio de diseño mayor: la
+  evidencia pasa a ser el registro estructurado del EVENTO de aplicación
+  (ADR-004). Tres modos por tipo de apoyo: evento (confirmación 1-click del docente,
+  cruce automático, fecha CAPTURADA — circuito nuevo en specs/evidencia-eventos.md),
+  atestación y documental (residual; muestreo acotado a este modo). Redraft de
+  RF-045/046/047/048/049/050/051 sobre el modelo nuevo. Dudas ALTA: exigencia a
+  docentes y fechas de evaluación en Banner.
+- **07-08-2026 · specs (Tanda 4)** — Evidencias II: RF-053 a RF-062 + índice
+  `specs/modulo-evidencias.md` (20/20 RF del bloque prioritario). Fiscalización
+  alimentada por incumplimientos de evento en tiempo real: recordatorios D-X
+  (documental/atestación), rojo y arrastre con umbral de instancia institucional
+  formal (seed 2 períodos, registro de gestión — S-22 ampliado), escalamiento con
+  peldaño final GDI fijo, semáforo en vivo, reportes por modo, gestión directa
+  formalizada + "cierre excepcional documentado", histórico con línea base 2024-25,
+  exportación con manifiesto de integridad, configuración del ciclo, contrato de
+  indicadores (CA: el seed reproduce la línea base del PDF).

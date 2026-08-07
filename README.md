@@ -33,12 +33,13 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 | [`specs/seed.md`](specs/seed.md) | Datos sintéticos chilenos + generador de 881 registros sucios calibrados para la migración |
 | [`specs/sla-engine.md`](specs/sla-engine.md) | Motor de plazos: reloj hábil chileno, pausas, avisos, escalamiento, períodos |
 | [`specs/validacion-documental.md`](specs/validacion-documental.md) | Validación en dos niveles: admisibilidad automática + decisión humana |
+| [`specs/evidencia-eventos.md`](specs/evidencia-eventos.md) | Circuito de evidencia por eventos (ADR-004): evaluaciones, confirmación 1-click del docente, reprogramaciones |
 | [`specs/ficha-estudiante.md`](specs/ficha-estudiante.md) | Ficha única del estudiante (vista integradora, módulo 6 del cliente) |
 | [`specs/reportes-dashboards.md`](specs/reportes-dashboards.md) | Dashboards e indicadores (experiencia del perfil Rectoría, reportes de cumplimiento) |
 | [`specs/design-system.md`](specs/design-system.md) | Design system: tokens AA, componentes base, patrones de accesibilidad, login dev "actuar como" |
 | [`specs/TEMPLATE-RF.md`](specs/TEMPLATE-RF.md) | Template de spec por requerimiento funcional (Fase 0) |
 | [`specs/rf/`](specs/rf/) | Una spec por requerimiento funcional (RF-001…RF-070, en tandas) |
-| `specs/modulo-*.md` | Índices por módulo: orden interno de construcción y mapa de cobertura del bloque ([workflow](specs/modulo-workflow.md), [solicitudes](specs/modulo-solicitudes.md)) |
+| `specs/modulo-*.md` | Índices por módulo: orden interno de construcción y mapa de cobertura del bloque ([workflow](specs/modulo-workflow.md), [solicitudes](specs/modulo-solicitudes.md), [evidencias](specs/modulo-evidencias.md)) |
 | [`docs/`](docs/) | Documentación viva: decisiones, arquitectura explicada, manuales |
 | [`docs/decisiones/`](docs/decisiones/) | ADRs (Architecture Decision Records), uno por decisión importante |
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Registro de cambios por módulo/fase |
@@ -56,6 +57,7 @@ código todavía; este repositorio es, por ahora, el contrato de construcción.
 - [ADR-001 — Arquitectura híbrida: núcleo a medida + ecosistema M365](docs/decisiones/ADR-001-arquitectura-hibrida.md)
 - [ADR-002 — K-anonimato en dashboards agregados](docs/decisiones/ADR-002-k-anonimato-dashboards.md)
 - [ADR-003 — Marco normativo ampliado por el proveedor](docs/decisiones/ADR-003-marco-normativo-ampliado.md)
+- [ADR-004 — Evidencia por eventos, no solo documental](docs/decisiones/ADR-004-evidencia-por-eventos.md)
 
 ## Cómo levantar el entorno
 

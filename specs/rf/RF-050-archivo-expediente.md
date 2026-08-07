@@ -8,9 +8,10 @@
 respaldos viven en correos, SharePoint suelto y carpetas locales de sede (cap. 2).
 
 ## Descripción
-Toda evidencia —validada, observada o histórica— queda archivada EN el expediente
-digital del caso, con sus versiones, resultados de validación y cadena de quién cargó
-qué y cuándo. Ante una fiscalización (Leyes 20.422/21.091) o la acreditación CNA, el
+Toda evidencia queda archivada EN el expediente digital del caso: los archivos del
+modo documental con sus versiones y validaciones, Y los REGISTROS ESTRUCTURADOS de
+los modos evento y atestación (confirmaciones con fecha capturada, reprogramaciones,
+autores — ADR-004), que son evidencia de primera clase en el legajo, no metadatos. Ante una fiscalización (Leyes 20.422/21.091) o la acreditación CNA, el
 respaldo de un caso se encuentra en un lugar, completo, en segundos.
 
 ## Perfiles y permisos

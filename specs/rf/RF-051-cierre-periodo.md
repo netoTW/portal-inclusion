@@ -31,9 +31,10 @@ planillas — eso era días de trabajo del equipo nacional.
 
 ## Flujo principal
 1. Fecha de cierre cumplida → job idempotente cierra el período.
-2. Por caso: congela el estado final de su checklist; acreditados disparan la
-   habilitación de cierre de caso (RF-052 la consume); no acreditados quedan con su
-   detalle exacto (qué ítems faltaron y en qué estado).
+2. Por caso: congela el estado final de su checklist (cada ítem según su modo,
+   ADR-004); acreditados disparan la habilitación de cierre de caso (RF-052 la
+   consume); no acreditados quedan con su detalle exacto (qué ítems faltaron, en qué
+   estado y de qué modo — un incumplido de evento se distingue de un documental).
 3. Por sede: se computa el resultado (N casos, % acreditado) → histórico (RF-059) y
    semáforo/reportes (Tanda 4).
 4. Avisos de cierre: cada sede recibe su resultado; GDI el nacional. Indicadores en

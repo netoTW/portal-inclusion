@@ -1,8 +1,11 @@
-# RF-047 — Carga de evidencias en el caso
+# RF-047 — Carga de evidencias en el caso (modo DOCUMENTAL)
 
 **Módulo:** evidencias
 **Prioridad:** crítica
 **Depende de:** RF-045, RF-046, StorageAdapter, design-system (componente de carga)
+**Alcance por ADR-004:** este RF cubre el modo DOCUMENTAL (residual). Los modos
+EVENTO y ATESTACIÓN no cargan archivos: sus ítems se satisfacen con confirmaciones
+estructuradas (specs/evidencia-eventos.md).
 **Inferencia:** de la figura 3.2 (paso 3: "la sede carga la evidencia en el caso") y
 el bloque del cap. 7 ("carga y validación"). Hoy la carga es un correo con adjuntos
 cuando el equipo nacional lo pide; esto la vuelve un acto de 30 segundos en el caso.
