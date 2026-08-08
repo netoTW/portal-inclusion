@@ -11,3 +11,4 @@ runner.log
 .ruff_cache/
 .coverage
 coverage/
+*.egg-info/

@@ -70,9 +70,25 @@ construyen según la cola de `tareas.md`.
 
 ## Cómo levantar el entorno
 
-Aún no existe entorno ejecutable (Fase 0, solo especificación). Cuando exista, todo el
-stack correrá con `docker compose up` sin dependencias de cloud en dev — esta sección se
-actualizará en el mismo commit que lo haga posible.
+Requisitos: Docker Desktop corriendo. Nada más — sin cloud, sin cuentas.
+
+```bash
+cp .env.example .env   # valores solo-dev; sin este paso, compose corta con mensaje claro
+docker compose up --build
+```
+
+La primera vez tarda varios minutos (build de imágenes + npm install). Queda listo
+cuando la API loguea `api: sirviendo en :8000`. Luego:
+
+| URL | Qué es | Qué deberías ver |
+|---|---|---|
+| http://localhost:8000/docs | OpenAPI interactiva de la API | Swagger UI "Portal de Inclusión y Cuidados" con los endpoints de salud ejecutables |
+| http://localhost:8000/health | Liveness | `{"estado":"ok", "version":…, "entorno":"dev"}` |
+| http://localhost:8000/health/dependencias | Readiness (Postgres+Redis) | `{"estado":"ok","postgres":"ok","redis":"ok"}` |
+| http://localhost:5173 | SPA React (cascarón del scaffold) | Página "Portal de Inclusión y Cuidados — Entorno de desarrollo operativo" |
+| http://localhost:9001 | Consola MinIO (documentos dev) | Login (credenciales de tu `.env`) |
+
+Apagar: `Ctrl+C` (o `docker compose down`; agrega `-v` para borrar también los datos).
 
 ## Regla de mantención de este README
 

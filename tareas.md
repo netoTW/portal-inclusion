@@ -3,7 +3,7 @@
 # ORDEN = DEPENDENCIAS. No reordenar sin razón.
 
 ## Semana 1 — cimientos (mucho de esto conviene supervisado, no nocturno)
-- [ ] scaffold      | specs/arquitectura.md         | monorepo+docker+CI con TODOS los gates. HECHO incluye: /docs de FastAPI (OpenAPI interactiva) arriba con datos seed cargados, para ejercitar cada endpoint a mano
+- [x] scaffold      | specs/arquitectura.md         | monorepo+docker+CI con TODOS los gates. HECHO incluye: /docs de FastAPI (OpenAPI interactiva) arriba con datos seed cargados, para ejercitar cada endpoint a mano
 - [ ] contracts     | specs/arquitectura.md         | tipos compartidos + adapters de integración
 - [ ] authz         | specs/authz.md                | policy engine ABAC + esquema clinical + gate
 - [ ] redteam       | specs/redteam.md              | agente adversarial docente→clinical, set de vectores

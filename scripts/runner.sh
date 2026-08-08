@@ -65,9 +65,10 @@ while true; do
   done
 
   if [ "$exito" = "1" ]; then
-    git add -A && git commit -m "feat($modulo): $spec [runner, gates verdes]" >/dev/null
+    # Marcar ANTES de commitear: el [x] viaja en el mismo commit que el módulo.
     # sed -i portable (BSD/macOS exige sufijo; GNU lo acepta): usar backup y borrarlo
     sed -i.bak "${num}s/- \[ \]/- [x]/" "$COLA" && rm -f "$COLA.bak"
+    git add -A && git commit -m "feat($modulo): $spec [runner, gates verdes]" >/dev/null
     echo "  ✔ HECHO y commiteado" | tee -a "$LOG"
   else
     mkdir -p "packages/$modulo"
@@ -85,7 +86,7 @@ while true; do
         echo '```'
       } > "packages/$modulo/LIMITE-ENCONTRADO.md"
     fi
-    sed -i.bak "${num}s/- \[ \]/- [!]/" "$COLA" && rm -f "$COLA.bak"
+    sed -i.bak "${num}s/- \[ \]/- [!]/" "$COLA" && rm -f "$COLA.bak"  # antes del commit
     git add -A && git commit -m "wip($modulo): BLOQUEO ACTIVO documentado en LIMITE-ENCONTRADO.md" >/dev/null
     echo "  ⚠ BLOQUEO ACTIVO documentado, sigo con la próxima" | tee -a "$LOG"
   fi
