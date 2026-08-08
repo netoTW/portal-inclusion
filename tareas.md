@@ -5,10 +5,10 @@
 ## Semana 1 — cimientos (mucho de esto conviene supervisado, no nocturno)
 - [x] scaffold      | specs/arquitectura.md         | monorepo+docker+CI con TODOS los gates. HECHO incluye: /docs de FastAPI (OpenAPI interactiva) arriba con datos seed cargados, para ejercitar cada endpoint a mano
 - [ ] contracts     | specs/arquitectura.md         | tipos compartidos + adapters de integración
+- [ ] seed          | specs/seed.md                 | datos chilenos + generador 881 registros sucios calibrados — SUBIÓ: precede a los primeros endpoints de datos (aprobación desviación 1 del scaffold) y redteam/authz la necesitan
 - [ ] authz         | specs/authz.md                | policy engine ABAC + esquema clinical + gate
 - [ ] redteam       | specs/redteam.md              | agente adversarial docente→clinical, set de vectores
 - [ ] audit         | specs/audit.md                | bitácora inmutable, mutaciones + denegaciones
-- [ ] seed          | specs/seed.md                 | datos chilenos + generador 881 registros sucios calibrados
 - [ ] sla-engine    | specs/sla-engine.md            | motor de plazos: reloj hábil CL, pausas, avisos, escalamiento, períodos
 - [ ] workflow      | specs/workflow.md + specs/modulo-workflow.md | motor de metadatos + 7 etapas/SLA seed + días hábiles CL (corazón del sistema); su UI admin va en ui-admin
 - [ ] ui-shell      | specs/design-system.md        | design system (tokens+componentes) + navegación + login dev "actuar como" (7 perfiles) + layout por perfil
