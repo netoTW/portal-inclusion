@@ -1,0 +1,32 @@
+# Configuración compartida de tooling Python del monorepo.
+# Cada app/package tiene su propio pyproject con dependencias; este archivo
+# solo centraliza lint (ruff), typecheck (mypy strict) y pytest, para que
+# `ruff check .` / `mypy <ruta>` se comporten igual en local, runner y CI.
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = ["docs-fuente", "apps/web", "e2e", "mocks", "redteam"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errores
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "UP",  # pyupgrade
+  "B",   # bugbear
+  "SIM", # simplify
+  "C4",  # comprehensions
+  "RUF", # reglas propias de ruff
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["apps/api/tests", "packages"]

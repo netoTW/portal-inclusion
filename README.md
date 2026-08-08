@@ -14,15 +14,21 @@ caso no se cierra.**
 
 ## Estado actual
 
-**Fase 0 — especificación.** El kit de arranque está auditado contra el documento fuente
-del cliente (24.07.2026) y corregido. Próximo paso: draftear las specs de los 70
-requerimientos funcionales (RF-001 a RF-070) en tandas revisadas una a una. No hay
-código todavía; este repositorio es, por ahora, el contrato de construcción.
+**Fase 1 — construcción.** Fase 0 completa (70/70 RF especificados, revisados línea a
+línea). Los cimientos del monorepo están operativos: `apps/api` (FastAPI + Alembic,
+OpenAPI interactiva en `/docs`), `apps/web` (Vite + React + TS estricto), entorno
+completo con `cp .env.example .env && docker compose up` (Postgres 16, Redis, MinIO)
+y CI con los seis gates de `specs/arquitectura.md`. Los módulos funcionales se
+construyen según la cola de `tareas.md`.
 
 ## Mapa del repositorio
 
 | Ruta | Qué es |
 |---|---|
+| [`apps/api`](apps/api/) | API FastAPI (orquestación; la lógica vive en `/packages`) |
+| [`apps/web`](apps/web/) | SPA React (Vite + TypeScript estricto + Tailwind) |
+| [`packages/`](packages/) | Un package por módulo funcional (los crea cada tarea de la cola) |
+| [`docker-compose.yml`](docker-compose.yml) | Entorno dev completo: Postgres 16, Redis, MinIO, api, web |
 | [`specs/`](specs/) | **Contrato de construcción** (fuente de verdad para los agentes que implementan) |
 | [`specs/contexto-aiep.md`](specs/contexto-aiep.md) | Datos reales de la operación: volúmenes, perfiles, etapas, SLA, métricas de éxito, diagramas del PDF como texto |
 | [`specs/arquitectura.md`](specs/arquitectura.md) | Monorepo, separación de datos clínicos, policy engine, motor de workflow, gates de CI, adapters |

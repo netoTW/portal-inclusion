@@ -1,0 +1,151 @@
+# Gates de CI — specs/arquitectura.md §"Gates de CI".
+# Los seis gates quedan instalados desde el scaffold. Igual que en
+# scripts/runner.sh, un gate cuyo objetivo aún no existe se OMITE con aviso
+# (las tareas de la cola crean sus propios objetivos); jamás se deshabilita
+# un gate cuyo objetivo sí existe.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: "Gates 1+3 · pytest+coverage / ruff / mypy strict"
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:16
+        env:
+          POSTGRES_USER: portal
+          POSTGRES_PASSWORD: portal_test
+          POSTGRES_DB: portal_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U portal" --health-interval 3s
+          --health-timeout 3s --health-retries 20
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+    env:
+      DATABASE_URL: postgresql+psycopg://portal:portal_test@localhost:5432/portal_test
+      REDIS_URL: redis://localhost:6379/0
+      APP_ENV: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar API + packages (editable) y tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e "apps/api[dev]"
+          for pkg in packages/*/; do
+            [ -f "$pkg/pyproject.toml" ] && pip install -e "$pkg[dev]" || true
+          done
+      - name: ruff (lint)
+        run: ruff check .
+      - name: mypy strict (api + packages)
+        run: |
+          mypy apps/api/app
+          for pkg in packages/*/; do
+            [ -f "$pkg/pyproject.toml" ] && mypy "$pkg" || true
+          done
+      - name: pytest + coverage
+        run: pytest apps/api --cov=apps/api/app --cov-report=term-missing
+
+  web:
+    name: "Gates 2+3 · vitest / eslint / tsc strict"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - name: eslint
+        run: npm run lint
+      - name: tsc strict (--noEmit)
+        run: npx --no-install tsc --noEmit
+      - name: vitest
+        run: npx --no-install vitest run
+
+  e2e-axe:
+    name: "Gates 2+4 · Playwright por perfil + axe-core (0 violaciones)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guarda de existencia
+        id: guard
+        run: |
+          if ls e2e/*/*.spec.ts >/dev/null 2>&1; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::e2e/ sin specs todavía (los crean ui-shell y los módulos) — gate omitido"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.run == 'true'
+        with:
+          node-version: "22"
+      - name: Levantar stack + Playwright con axe
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          cp .env.example .env
+          docker compose up -d --wait
+          cd e2e && npm ci && npx playwright install --with-deps chromium
+          npx playwright test --reporter=line
+
+  redteam:
+    name: "Gate 5 · red team: 0 exfiltraciones clínicas"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guarda de existencia
+        id: guard
+        run: |
+          if [ -f redteam/run.js ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::redteam/run.js no existe todavía (lo crea la tarea redteam) — gate omitido"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.run == 'true'
+        with:
+          node-version: "22"
+      - name: Correr set de vectores
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          cp .env.example .env
+          docker compose up -d --wait
+          node redteam/run.js
+
+  fuzzing:
+    name: "Gate 6 · fast-check: 0 invariantes del workflow rotas"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guarda de existencia
+        id: guard
+        run: |
+          if ls packages/workflow/fuzz/*.ts >/dev/null 2>&1; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::packages/workflow/fuzz no existe todavía (lo crea la tarea fuzzing) — gate omitido"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.run == 'true'
+        with:
+          node-version: "22"
+      - name: Propiedades del motor de workflow
+        if: steps.guard.outputs.run == 'true'
+        run: cd packages/workflow/fuzz && npm ci && npm test

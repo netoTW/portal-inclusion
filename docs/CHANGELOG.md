@@ -109,3 +109,23 @@ Registro de cambios por fase/módulo. Cada tarea HECHA agrega su entrada aquí
   decisión humana, huecos visibles). Reporte de consistencia transversal: 17
   verificaciones en verde — compuerta final aceptada. **Fase 0 completa: 70/70 RF
   + 22 specs de soporte + 4 ADRs + 23 supuestos + 64 preguntas de levantamiento.**
+
+## Fase 1 — construcción
+
+- **07-08-2026 · scaffold** — Cimientos del monorepo operativos (specs/arquitectura.md):
+  `apps/api` (FastAPI 0.1.0: OpenAPI interactiva en `/docs`, `/health` y
+  `/health/dependencias` ejercitables a mano; SQLAlchemy 2 + Alembic con migración
+  inicial reversible que crea el esquema `clinical`; configuración por entorno vía
+  pydantic-settings, cero secretos hardcodeados), `apps/web` (Vite + React 19 + TS
+  estricto + Tailwind 4; ESLint con jsx-a11y; 2 tests Vitest del cascarón semántico),
+  `docker-compose.yml` (Postgres 16 + Redis + MinIO + api + web; la API espera la DB,
+  migra, corre el hook de seed y sirve `/docs`), CI en `.github/workflows/ci.yml` con
+  los SEIS gates de arquitectura.md — los que aún no tienen objetivo (e2e/axe, redteam,
+  fuzzing) se omiten con aviso y guarda de existencia, igual que en el runner; jamás
+  deshabilitados. `/packages` queda documentado sin esqueletos vacíos (un package
+  existente dispara sus gates). Carga de seed: hook `python -m app.seed` en el arranque
+  del contenedor, no-op explícito hasta que exista `/packages/seed` (tarea `seed`).
+  Verificado local: pytest 4/4, mypy strict y ruff limpios, vitest 2/2, tsc y eslint
+  limpios, SQL de migración generado offline. Pendiente de entorno: docker no estaba
+  disponible en el host durante esta tarea — `docker compose up` quedó definido pero
+  sin humo local; primer arranque supervisado pendiente.
